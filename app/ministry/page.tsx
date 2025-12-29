@@ -1,8 +1,9 @@
-'use client';
+"use client";
 
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import Carousel from '@/components/Carousel';
 
 export default function Ministry() {
   const [readMore, setReadMore] = useState(false);
@@ -27,20 +28,13 @@ export default function Ministry() {
   return (
     <main>
       {/* Carousel */}
-      <div className="carousel slide mb-8" data-bs-ride="carousel">
-        <div className="carousel-inner h-96">
-          {['CC (1).jpg', 'CC (4).jpg', 'CC (6).jpg', 'CC22.jpg', 'CC30.jpg'].map((img, idx) => (
-            <div key={img} className={`carousel-item ${idx === 0 ? 'active' : ''}`}>
-              <Image
-                src={`/assets/ministry/${img}`}
-                alt={`Slide ${idx + 1}`}
-                width={1920}
-                height={400}
-                className="w-full h-96 object-cover"
-              />
-            </div>
-          ))}
-        </div>
+      <div className="mb-8">
+        {/* Custom Carousel component */}
+        <Carousel
+          images={['/assets/ministry/CC (1).jpg', '/assets/ministry/CC (4).jpg', '/assets/ministry/CC (6).jpg', '/assets/ministry/CC22.jpg', '/assets/ministry/CC30.jpg']}
+          interval={4000}
+          heightClass="h-96"
+        />
       </div>
 
       {/* Title Section */}

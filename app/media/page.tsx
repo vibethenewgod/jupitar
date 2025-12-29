@@ -7,8 +7,14 @@ export default function Media() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Generate gallery images array (you can add more images as needed)
-  const galleryImages = Array.from({ length: 100 }, (_, i) => `/assets/gallery/galleria${i + 1}.jpg`);
+  // New images at the top
+  const newImages = Array.from({ length: 10 }, (_, i) => `/assets/gallery/newadd${i + 1}.jpg`);
+  
+  // Existing gallery images
+  const existingImages = Array.from({ length: 100 }, (_, i) => `/assets/gallery/galleria${i + 1}.jpg`);
+  
+  // Combine with new images first
+  const galleryImages = [...newImages, ...existingImages];
 
   return (
     <main>

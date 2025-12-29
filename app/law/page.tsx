@@ -1,8 +1,9 @@
-'use client';
+"use client";
 
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import Carousel from '@/components/Carousel';
 
 export default function Law() {
   const [readMore, setReadMore] = useState(false);
@@ -36,20 +37,22 @@ export default function Law() {
       </div>
 
       {/* Carousel */}
-      <div className="carousel slide mb-8" data-bs-ride="carousel">
-        <div className="carousel-inner h-96">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 10].map((num, idx) => (
-            <div key={num} className={`carousel-item ${idx === 0 ? 'active' : ''}`}>
-              <Image
-                src={`/assets/Zions Chambers/first${num}.jpg`}
-                alt={`Slide ${num}`}
-                width={1920}
-                height={400}
-                className="w-full h-96 object-cover"
-              />
-            </div>
-          ))}
-        </div>
+      <div className="mb-8">
+        <Carousel
+          images={[
+            '/assets/Zions Chambers/first1.jpg',
+            '/assets/Zions Chambers/first2.jpg',
+            '/assets/Zions Chambers/first3.jpg',
+            '/assets/Zions Chambers/first4.jpg',
+            '/assets/Zions Chambers/first5.jpg',
+            '/assets/Zions Chambers/first6.jpg',
+            '/assets/Zions Chambers/first7.jpg',
+            '/assets/Zions Chambers/first8.jpg',
+            '/assets/Zions Chambers/first10.jpg',
+          ]}
+          interval={4000}
+          heightClass="h-96"
+        />
       </div>
 
       {/* Founder Section */}
