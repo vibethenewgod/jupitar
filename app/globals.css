@@ -29,6 +29,20 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Ensure anchored sections are visible below the sticky header when using in-page links */
+html {
+  /* primary smooth scroll behavior */
+  scroll-behavior: smooth;
+  /* space to leave for sticky header: larger on desktop, smaller on mobile */
+  scroll-padding-top: 5.5rem;
+}
+
+@media (max-width: 1023px) {
+  html {
+    scroll-padding-top: 4.25rem;
+  }
+}
+
 /* Smooth animations */
 @keyframes fadeInUp {
   from {

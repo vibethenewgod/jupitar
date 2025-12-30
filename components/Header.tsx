@@ -7,10 +7,13 @@ import Image from 'next/image';
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expertiseOpen, setExpertiseOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   const closeTimeout = useRef<number | null>(null);
   const menuRef = useRef<HTMLUListElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const lastScrollY = useRef(0);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -24,6 +27,46 @@ export default function Header() {
     document.addEventListener('mousedown', onDocClick);
     return () => document.removeEventListener('mousedown', onDocClick);
   }, [expertiseOpen]);
+
+  // Handle scroll behavior for header hide/show
+  useEffect(() => {
+    const threshold = 120; // px before hiding on scroll down
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const isMobile = window.innerWidth < 1024; // lg breakpoint
+
+      // On mobile keep header visible (no hide-on-scroll)
+      if (isMobile) {
+        setHidden(false);
+        setIsScrolled(currentScrollY > 0);
+        lastScrollY.current = currentScrollY;
+        return;
+      }
+
+      // Desktop: hide when scrolling down past threshold, show when scrolling up
+      if (currentScrollY > lastScrollY.current && currentScrollY > threshold) {
+        setHidden(true);
+      } else if (currentScrollY < lastScrollY.current) {
+        setHidden(false);
+      }
+
+      setIsScrolled(currentScrollY > 0);
+      lastScrollY.current = currentScrollY;
+    };
+
+    const handleResize = () => {
+      // Reset hidden state when crossing breakpoints to avoid stuck state
+      if (window.innerWidth < 1024) setHidden(false);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleExpertiseEnter = () => {
     if (closeTimeout.current) {
@@ -43,7 +86,7 @@ export default function Header() {
   };
 
   return (
-    <header className="text-white sticky top-0 z-50 nav-clean nav-glass">
+    <header className={`text-white sticky top-0 z-50 nav-clean nav-glass transform transition-transform duration-300 ease-in-out ${hidden ? 'lg:-translate-y-full' : 'translate-y-0'} ${isScrolled ? 'shadow-lg' : ''}`}>
       {/* Top Bar */}
       <div className="bg-[#cc7514] py-2 px-5">
         <div className="flex justify-end">
@@ -139,8 +182,8 @@ export default function Header() {
             {/* Right Links - Desktop */}
             <ul className="hidden lg:flex gap-6 mr-5 items-center text-base tracking-[0.08em] font-semibold">
               <li>
-                <Link href="/news" className="px-3.5 py-2.5 font-semibold tracking-[0.08em] text-white rounded-full transition-all duration-200 hover:text-[#cc7514] hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#cc7514] no-underline hover:no-underline">
-                  NEWS
+                <Link href="/insight" className="px-3.5 py-2.5 font-semibold tracking-[0.08em] text-white rounded-full transition-all duration-200 hover:text-[#cc7514] hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#cc7514] no-underline hover:no-underline">
+                  INSIGHT
                 </Link>
               </li>
               <li>
@@ -223,8 +266,8 @@ export default function Header() {
               </Link>
             </li>
             <li className="border-b border-gray-700">
-              <Link href="/news" className="block text-white py-4 px-5 text-lg tracking-[0.08em] font-semibold hover:bg-white/10 transition-colors no-underline hover:no-underline">
-                NEWS
+              <Link href="/insight" className="block text-white py-4 px-5 text-lg tracking-[0.08em] font-semibold hover:bg-white/10 transition-colors no-underline hover:no-underline">
+                INSIGHT
               </Link>
             </li>
             <li className="border-b border-gray-700">

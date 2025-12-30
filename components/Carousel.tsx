@@ -78,7 +78,7 @@ export default function Carousel({ images, interval = 4000, heightClass = "h-48 
       <div className="absolute inset-0 flex transition-transform duration-600 ease-out" style={{ transform: `translateX(-${index * 100}%)` }}>
         {images.map((src, i) => (
           <div key={i} className={`w-full flex-shrink-0 ${heightClass} relative`}>
-            <Image src={src} alt={`Slide ${i + 1}`} fill style={{ objectFit: "cover" }} sizes="100vw" />
+            <Image src={src} alt={`Slide ${i + 1}`} fill style={{ objectFit: "contain" }} sizes="100vw" />
           </div>
         ))}
       </div>

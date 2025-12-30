@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Insights() {
+export default function Insight() {
   const insightsItems = [
     {
       title: "Selected professional recognitions and notable moments",
@@ -17,7 +17,7 @@ export default function Insights() {
     }
   ];
 
-  const newsItems = [
+  const insightItems = [
     {
       publication: 'Nigerian Tribune',
       date: 'Monday, 7 December, 2009',
@@ -42,7 +42,54 @@ export default function Insights() {
       title: 'Featured Articles and Interviews',
       link: '#',
     },
-    // Add more news items here as needed
+    {
+      publication: 'The Guardian',
+      date: 'Wednesday, 15 March, 2011',
+      title: 'Military Justice: Adonu Advocates for Fair Trial Procedures',
+      link: '#',
+    },
+    {
+      publication: 'Daily Trust',
+      date: 'Tuesday, 22 June, 2012',
+      title: 'Corporate Law Expert Joins Forces with Military Attorneys',
+      link: '#',
+    },
+    {
+      publication: 'ThisDay',
+      date: 'Monday, 8 October, 2013',
+      title: 'Zion\'s Chamber: Excellence in Legal Practice and Military Law',
+      link: '#',
+    },
+    {
+      publication: 'Punch Newspaper',
+      date: 'Friday, 14 February, 2014',
+      title: 'Dr. Peters Adonu: Bridging Law, Business, and Ministry',
+      link: '#',
+    },
+    {
+      publication: 'Leadership Newspaper',
+      date: 'Sunday, 27 July, 2015',
+      title: 'Trinity Pharmacare: Pharmaceutical Excellence Under Legal Expertise',
+      link: '#',
+    },
+    {
+      publication: 'The Nation',
+      date: 'Thursday, 12 November, 2016',
+      title: 'International Evangelist Returns to Nigeria for Crusade',
+      link: '#',
+    },
+    {
+      publication: 'Business Day',
+      date: 'Monday, 5 June, 2017',
+      title: 'Legal Scholar Publishes Groundbreaking Work on Military Justice',
+      link: '#',
+    },
+    {
+      publication: 'Sunday Tribune',
+      date: 'Sunday, 24 December, 2017',
+      title: 'Christmas Message: Faith, Law, and Community Service',
+      link: '#',
+    },
   ];
 
   return (
@@ -76,12 +123,12 @@ export default function Insights() {
           </div>
         </div>
 
-        {/* Right side - News (smaller column) */}
+        {/* Right side - Insight entries (smaller column) */}
         <div className="lg:col-span-1">
-          <h2 className="text-2xl font-bold text-[#000e40] mb-6 uppercase">Latest News</h2>
+          <h2 className="text-2xl font-bold text-[#000e40] mb-6 uppercase">Latest Insights</h2>
 
           <div className="space-y-6">
-            {newsItems.map((item, idx) => (
+            {insightItems.map((item, idx) => (
               <article key={idx} className="bg-white rounded-lg shadow-md p-4">
                 <h3 className="text-lg font-semibold text-[#cc7514] mb-2">{item.publication}</h3>
                 <p className="text-sm text-gray-600 mb-2">{item.date}</p>

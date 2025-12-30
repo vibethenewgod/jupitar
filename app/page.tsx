@@ -23,7 +23,7 @@ export default function Home() {
                 </h1>
                 <div className="mt-8">
                   <Link
-                    href="/insights"
+                    href="/insight"
                     className="inline-block w-full sm:w-auto rounded-lg border-2 border-gray-300 px-4 py-2 text-xs font-semibold text-[#0f162b] bg-white hover:bg-gray-50 hover:border-gray-400 shadow-sm transition-all duration-200"
                   >
                     View More
@@ -35,7 +35,7 @@ export default function Home() {
               <div className="md:flex-1 w-full">
                 <div className="overflow-hidden ring-1 ring-gray-200 shadow-[0_16px_48px_rgba(15,22,43,0.1)] rounded-2xl">
                   <Image
-                    src="/assets/Barrister Peter 1.jpg"
+                    src="/assets/nicki.jpg"
                     alt="Recognition image"
                     width={1200}
                     height={700}
