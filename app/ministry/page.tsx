@@ -6,7 +6,6 @@ import { useState } from 'react';
 import Carousel from '@/components/Carousel';
 
 export default function Ministry() {
-  const [readMore, setReadMore] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -27,14 +26,24 @@ export default function Ministry() {
 
   return (
     <main>
-      {/* Carousel */}
-      <div className="mb-8">
+      {/* Carousel with Logo Overlay */}
+      <div className="mb-8 relative">
         {/* Custom Carousel component */}
         <Carousel
           images={['/assets/ministry/CC (1).jpg', '/assets/ministry/CC (4).jpg', '/assets/ministry/CC (6).jpg', '/assets/ministry/CC22.jpg', '/assets/ministry/CC30.jpg']}
           interval={4000}
           heightClass="h-96"
         />
+        {/* Zion's Chamber Logo Overlay */}
+        <div className="absolute top-4 left-4 z-10 bg-white/90 p-3 rounded-lg shadow-lg">
+          <Image
+            src="/assets/zions logo.png"
+            alt="Zions Chamber Logo"
+            width={80}
+            height={80}
+            className="object-contain"
+          />
+        </div>
       </div>
 
       {/* Title Section */}
@@ -47,7 +56,7 @@ export default function Ministry() {
       {/* Content Section */}
       <div className="max-w-7xl mx-auto px-5 py-8">
         <div className="bg-gray-50 rounded-lg p-8">
-          <div className={`overflow-hidden transition-all ${readMore ? 'max-h-full' : 'max-h-64'}`}>
+          <div className="overflow-hidden">
             <p className="text-justify leading-relaxed mb-4">
               Peters Adonu Global Outreach, under the leadership of Pastor Peters Ikechukwu Adonu, is a dynamic ministry dedicated to spreading faith and uplifting communities on a global scale. Dr. Peters, an accomplished pastor and international evangelist, has been invited to minister in churches across multiple continents, delivering messages of hope and spiritual growth. The ministry is renowned for its vibrant approach to preaching and its commitment to nurturing spiritual development in diverse communities.
             </p>
@@ -58,12 +67,6 @@ export default function Ministry() {
               In addition to his roles in law and business, Dr. Peters also serves as the regional director of Chaplaincy (Nigeria Region) under the Covenant International University and Seminary Board in Texas, USA, a position accredited by the United Nations. As President of Peters Adonu Global Outreach, with registration in both Atlanta, USA, and Nigeria, he has ministered in over 17 countries, reflecting his unwavering commitment to spreading messages of hope and faith worldwide.
             </p>
           </div>
-          <button
-            onClick={() => setReadMore(!readMore)}
-            className="mt-4 bg-[#000f40] text-white px-6 py-2 rounded-md hover:bg-[#cc7514] transition-colors"
-          >
-            {readMore ? 'Read Less' : 'Read More'}
-          </button>
         </div>
       </div>
 

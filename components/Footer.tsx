@@ -5,46 +5,55 @@ export default function Footer() {
     <footer className="bg-[#000f40] text-gray-200 py-8 px-5">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-wrap justify-between gap-8 mb-8">
-          {/* Navigation Section */}
+          {/* Navigation Section - Split into 2 columns */}
           <div className="flex-1 min-w-[220px]">
             <h4 className="text-lg mb-4 text-[#cc7514] font-bold uppercase tracking-wide">Navigation</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/" className="text-gray-300 text-sm hover:text-[#cc7514] transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-gray-300 text-sm hover:text-[#cc7514] transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/#experts" className="text-gray-300 text-sm hover:text-[#cc7514] transition-colors">
-                  Expertise
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-300 text-sm hover:text-[#cc7514] transition-colors">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/news" className="text-gray-300 text-sm hover:text-[#cc7514] transition-colors">
-                  News
-                </Link>
-              </li>
-              <li>
-                <Link href="/books" className="text-gray-300 text-sm hover:text-[#cc7514] transition-colors">
-                  Books
-                </Link>
-              </li>
-              <li>
-                <Link href="/media" className="text-gray-300 text-sm hover:text-[#cc7514] transition-colors">
-                  Media
-                </Link>
-              </li>
-            </ul>
+            <div className="grid grid-cols-2 gap-4">
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/" className="text-gray-300 text-sm hover:text-[#cc7514] transition-colors">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="text-gray-300 text-sm hover:text-[#cc7514] transition-colors">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#experts" className="text-gray-300 text-sm hover:text-[#cc7514] transition-colors">
+                    Expertise
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-gray-300 text-sm hover:text-[#cc7514] transition-colors">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/news" className="text-gray-300 text-sm hover:text-[#cc7514] transition-colors">
+                    News
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/books" className="text-gray-300 text-sm hover:text-[#cc7514] transition-colors">
+                    Books
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/media" className="text-gray-300 text-sm hover:text-[#cc7514] transition-colors">
+                    Media
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/insights" className="text-gray-300 text-sm hover:text-[#cc7514] transition-colors">
+                    Insights
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Contact Information Section */}

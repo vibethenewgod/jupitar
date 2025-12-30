@@ -10,6 +10,7 @@ export default function Books() {
     { id: 6, img: '/assets/book 6.jpg', title: 'Book 6' },
     { id: 7, img: '/assets/book 7.jpg', title: 'Book 7' },
     { id: 8, img: '/assets/book 8.jpg', title: 'Book 8' },
+    { id: 9, img: '/assets/book 9.jpg', title: 'Book 9' },
   ];
 
   return (

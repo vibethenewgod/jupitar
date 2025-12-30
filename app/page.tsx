@@ -23,7 +23,7 @@ export default function Home() {
                 </h1>
                 <div className="mt-8">
                   <Link
-                    href="/about"
+                    href="/insights"
                     className="inline-block w-full sm:w-auto rounded-lg border-2 border-gray-300 px-4 py-2 text-xs font-semibold text-[#0f162b] bg-white hover:bg-gray-50 hover:border-gray-400 shadow-sm transition-all duration-200"
                   >
                     View More
@@ -35,7 +35,7 @@ export default function Home() {
               <div className="md:flex-1 w-full">
                 <div className="overflow-hidden ring-1 ring-gray-200 shadow-[0_16px_48px_rgba(15,22,43,0.1)] rounded-2xl">
                   <Image
-                    src="/assets/nicki.jpg"
+                    src="/assets/Barrister Peter 1.jpg"
                     alt="Recognition image"
                     width={1200}
                     height={700}
@@ -184,6 +184,66 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials/Quotes Carousel Section */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#000e40] mb-4">What People Say</h2>
+            <p className="text-gray-600 text-lg">Testimonials and endorsements from colleagues and clients</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Testimonial 1 */}
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-[#cc7514] rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  J
+                </div>
+                <div className="ml-4">
+                  <h4 className="font-semibold text-[#000e40]">Justice Adebayo</h4>
+                  <p className="text-gray-600 text-sm">Chief Justice, Lagos State</p>
+                </div>
+              </div>
+              <p className="text-gray-700 italic">
+                "Dr. Peters Adonu's expertise in military law and criminal justice is unparalleled. His contributions to legal scholarship and practice have been invaluable to the Nigerian legal community."
+              </p>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-[#cc7514] rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  P
+                </div>
+                <div className="ml-4">
+                  <h4 className="font-semibold text-[#000e40]">Pastor Emmanuel</h4>
+                  <p className="text-gray-600 text-sm">Senior Pastor, RCCG</p>
+                </div>
+              </div>
+              <p className="text-gray-700 italic">
+                "As both a legal expert and a man of faith, Dr. Peters embodies the perfect balance of wisdom and compassion. His ministry work continues to inspire many."
+              </p>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-[#cc7514] rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  C
+                </div>
+                <div className="ml-4">
+                  <h4 className="font-semibold text-[#000e40]">Colonel Ibrahim</h4>
+                  <p className="text-gray-600 text-sm">Nigerian Army (Retired)</p>
+                </div>
+              </div>
+              <p className="text-gray-700 italic">
+                "During his service in the Special Investigation Bureau, Dr. Peters demonstrated exceptional dedication to justice and military discipline. A true professional."
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Expertise Section */}
       <section
         id="experts"
@@ -193,10 +253,10 @@ export default function Home() {
           EXPERTISE
         </h2>
         <p className="text-gray-600 mb-12 md:mb-14 text-base sm:text-lg font-medium">
-          Our Areas of Excellence
+          Areas of Excellence
         </p>
         <div className="flex flex-col md:flex-row justify-between mb-6 gap-6 sm:gap-7 md:gap-8 px-0">
-          <div className="relative w-full md:w-[30%] overflow-hidden rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0px_8px_16px_rgba(0,0,0,0.2)] group">
+          <Link href="/law" className="relative w-full md:w-[30%] overflow-hidden rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0px_8px_16px_rgba(0,0,0,0.2)] group">
             <Image
               src="/assets/law.jpg"
               alt="LAW"
@@ -208,16 +268,10 @@ export default function Home() {
               <p className="text-white text-lg sm:text-xl font-semibold transition-transform duration-300 group-hover:scale-110 group-hover:cursor-pointer">
                 LAW
               </p>
-              <Link
-                href="/law"
-                className="mt-3 py-2 px-4 bg-[#000f40] text-white text-xs font-semibold no-underline rounded-md opacity-0 translate-y-5 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 hover:rounded-sm hover:scale-105 hover:shadow-[0px_2px_2px_rgba(0,0,0,0.2),0px_4px_4px_rgba(0,0,0,0.1),0px_8px_8px_rgba(0,0,0,0.05)]"
-              >
-                READ MORE
-              </Link>
             </div>
-          </div>
+          </Link>
 
-          <div className="relative w-full md:w-[30%] overflow-hidden rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0px_8px_16px_rgba(0,0,0,0.2)] group">
+          <Link href="/contact" className="relative w-full md:w-[30%] overflow-hidden rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0px_8px_16px_rgba(0,0,0,0.2)] group">
             <Image
               src="/assets/healthcare.jpg"
               alt="HEALTHCARE"
@@ -229,18 +283,10 @@ export default function Home() {
               <p className="text-white text-lg sm:text-xl font-semibold transition-transform duration-300 group-hover:scale-110 group-hover:cursor-pointer">
                 HEALTHCARE
               </p>
-              <a
-                href="https://www.trinitypharmacareltd.com/about"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 py-2 px-4 bg-[#000f40] text-white text-xs font-semibold no-underline rounded-md opacity-0 translate-y-5 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 hover:rounded-sm hover:scale-105 hover:shadow-[0px_2px_2px_rgba(0,0,0,0.2),0px_4px_4px_rgba(0,0,0,0.1),0px_8px_8px_rgba(0,0,0,0.05)]"
-              >
-                READ MORE
-              </a>
             </div>
-          </div>
+          </Link>
 
-          <div className="relative w-full md:w-[30%] overflow-hidden rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0px_8px_16px_rgba(0,0,0,0.2)] group">
+          <Link href="/ministry" className="relative w-full md:w-[30%] overflow-hidden rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0px_8px_16px_rgba(0,0,0,0.2)] group">
             <Image
               src="/assets/religion.jpg"
               alt="MINISTRY"
@@ -252,14 +298,8 @@ export default function Home() {
               <p className="text-white text-lg sm:text-xl font-semibold transition-transform duration-300 group-hover:scale-110 group-hover:cursor-pointer">
                 MINISTRY
               </p>
-              <Link
-                href="/ministry"
-                className="mt-3 py-2 px-4 bg-[#000f40] text-white text-xs font-semibold no-underline rounded-md opacity-0 translate-y-5 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 hover:rounded-sm hover:scale-105 hover:shadow-[0px_2px_2px_rgba(0,0,0,0.2),0px_4px_4px_rgba(0,0,0,0.1),0px_8px_8px_rgba(0,0,0,0.05)]"
-              >
-                READ MORE
-              </Link>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 

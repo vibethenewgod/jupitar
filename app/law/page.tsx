@@ -6,7 +6,6 @@ import { useState } from 'react';
 import Carousel from '@/components/Carousel';
 
 export default function Law() {
-  const [readMore, setReadMore] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -36,8 +35,8 @@ export default function Law() {
         />
       </div>
 
-      {/* Carousel */}
-      <div className="mb-8">
+      {/* Carousel with Logo Overlay */}
+      <div className="mb-8 relative">
         <Carousel
           images={[
             '/assets/Zions Chambers/first1.jpg',
@@ -53,6 +52,16 @@ export default function Law() {
           interval={4000}
           heightClass="h-96"
         />
+        {/* Zion's Chamber Logo Overlay */}
+        <div className="absolute top-4 left-4 z-10 bg-white/90 p-3 rounded-lg shadow-lg">
+          <Image
+            src="/assets/zions logo.png"
+            alt="Zions Chamber Logo"
+            width={80}
+            height={80}
+            className="object-contain"
+          />
+        </div>
       </div>
 
       {/* Founder Section */}
@@ -88,7 +97,7 @@ export default function Law() {
       {/* Content Section */}
       <div className="max-w-7xl mx-auto px-5 py-8">
         <div className="bg-gray-50 rounded-lg p-8">
-          <div className={`overflow-hidden transition-all ${readMore ? 'max-h-full' : 'max-h-64'}`}>
+          <div className="overflow-hidden">
             <p className="text-justify leading-relaxed mb-4">
               As the Principal Partner of Peters Ike Adonu & Co (Zion's Chamber) in Ibadan, Oyo State, Nigeria, Dr. Peters Ikechukwu Adonu leads a team of skilled legal professionals specializing in military and corporate law. The firm is recognized for its excellence in providing comprehensive and effective legal solutions across various areas, including criminal law, civil litigation, corporate law, and human rights advocacy. Dr. Peters' leadership has established Zion's Chamber as a reputable institution in the legal community.
             </p>
@@ -102,12 +111,6 @@ export default function Law() {
               Leveraging Dr. Peters' extensive background as a military investigator, the firm also offers private investigation services. They handle a range of matters, from criminal investigations to private inquiries such as adultery and theft, applying rigorous methods honed from military experience.
             </p>
           </div>
-          <button
-            onClick={() => setReadMore(!readMore)}
-            className="mt-4 bg-[#000f40] text-white px-6 py-2 rounded-md hover:bg-[#cc7514] transition-colors"
-          >
-            {readMore ? 'Read Less' : 'Read More'}
-          </button>
         </div>
       </div>
 
